@@ -38,6 +38,7 @@ class YOLOXHead(tf.keras.layers.Layer):
 
     """
     Args:
+        num_classes: `int`, number of classes per category.
         act (str): activation type of conv. Defalut value: "silu".
         depthwise (bool): whether apply depthwise conv in conv branch. Defalut value: False.
     """
@@ -69,7 +70,7 @@ class YOLOXHead(tf.keras.layers.Layer):
           filters=int(256 * width),
           kernel_size=1,
           strides=1,
-          padding='same', # TODO
+          padding='same', 
           # use_bn = True,
           activation=act,
       )
